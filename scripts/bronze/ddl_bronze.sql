@@ -10,7 +10,7 @@ Script Purpose:
 */
 
 -- select database
-USE dwh_project; # select databasebronze_erp_loc_a101
+USE dwh_project; 
 
 
 -- drop table if exists
