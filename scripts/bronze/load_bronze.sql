@@ -7,7 +7,7 @@ Script Purpose:
     the following actions:
 		- Truncate the bronze table before loading data
         - Uses the 'LOAD DATA LOCAL INFILE' command
-        - logs the start, end and the loading duration of each table into 'bronze_log_load'
+        - logs the start, end and the loading duration of each table into 'loading_log'
 ======================================================================================
 */
 -- for loading csv-files
@@ -32,7 +32,7 @@ FIELDS TERMINATED BY ','
 SET @load_end = NOW();
 SET @load_duration_seconds = TIMESTAMPDIFF(SECOND, @load_start, @load_end);
 
-INSERT INTO bronze_log_load(table_name, load_start, load_end, load_duration_seconds)
+INSERT INTO loading_log(table_name, load_start, load_end, load_duration_seconds)
 	VALUES('bronze_crm_cust_info', @load_start, @load_end, @load_duration_seconds)
 ;
 
@@ -57,7 +57,7 @@ SET
 SET @load_end = NOW();
 SET @load_duration_seconds = TIMESTAMPDIFF(SECOND, @load_start, @load_end);
 
-INSERT INTO bronze_log_load(table_name, load_start, load_end, load_duration_seconds)
+INSERT INTO loading_log(table_name, load_start, load_end, load_duration_seconds)
 	VALUES('bronze_crm_prd_info', @load_start, @load_end, @load_duration_seconds)
 ;
 # =============================================================================================================== #
@@ -86,7 +86,7 @@ SET
 SET @load_end = NOW();
 SET @load_duration_seconds = TIMESTAMPDIFF(SECOND, @load_start, @load_end);
 
-INSERT INTO bronze_log_load(table_name, load_start, load_end, load_duration_seconds)
+INSERT INTO loading_log(table_name, load_start, load_end, load_duration_seconds)
 	VALUES('bronze_crm_sales_details', @load_start, @load_end, @load_duration_seconds)
 ;   
 # =============================================================================================================== #
@@ -106,7 +106,7 @@ FIELDS TERMINATED BY ','
 SET @load_end = NOW();
 SET @load_duration_seconds = TIMESTAMPDIFF(SECOND, @load_start, @load_end);
 
-INSERT INTO bronze_log_load(table_name, load_start, load_end, load_duration_seconds)
+INSERT INTO loading_log(table_name, load_start, load_end, load_duration_seconds)
 	VALUES('bronze_erp_cust_az12', @load_start, @load_end, @load_duration_seconds)
 ;   
 # =============================================================================================================== #
@@ -125,7 +125,7 @@ FIELDS TERMINATED BY ','
 SET @load_end = NOW();
 SET @load_duration_seconds = TIMESTAMPDIFF(SECOND, @load_start, @load_end);
 
-INSERT INTO bronze_log_load(table_name, load_start, load_end, load_duration_seconds)
+INSERT INTO loading_log(table_name, load_start, load_end, load_duration_seconds)
 	VALUES('bronze_erp_loc_a101', @load_start, @load_end, @load_duration_seconds)
 ;
 # =============================================================================================================== #
@@ -144,6 +144,6 @@ FIELDS TERMINATED BY ','
 SET @load_end = NOW();
 SET @load_duration_seconds = TIMESTAMPDIFF(SECOND, @load_start, @load_end);
 
-INSERT INTO bronze_log_load(table_name, load_start, load_end, load_duration_seconds)
+INSERT INTO loading_log(table_name, load_start, load_end, load_duration_seconds)
 	VALUES('bronze_erp_px_cat_g1v2', @load_start, @load_end, @load_duration_seconds)
 ;
