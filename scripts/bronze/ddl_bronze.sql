@@ -10,7 +10,7 @@ Script Purpose:
 */
 
 -- select database
-USE dwh_project; 
+USE dwh_project; # select databasebronze_erp_loc_a101
 
 
 -- drop table if exists
@@ -65,9 +65,9 @@ DROP TABLE IF EXISTS bronze_erp_cust_az12;
 
 -- create table 
 CREATE TABLE bronze_erp_cust_az12(
-CID					VARCHAR(50),
-BDATE				DATE,
-GEN					VARCHAR(50)
+cid					VARCHAR(50),
+bdate				DATE,
+gen					VARCHAR(50)
 );
 
 # =============================================================================================================== #
@@ -76,8 +76,8 @@ DROP TABLE IF EXISTS bronze_erp_loc_a101;
 
 -- create table 
 CREATE TABLE bronze_erp_loc_a101(
-CID					VARCHAR(50),
-CNTRY				VARCHAR(50)
+cid					VARCHAR(50),
+cntry				VARCHAR(50)
 );
 
 # =============================================================================================================== #
@@ -86,9 +86,9 @@ DROP TABLE IF EXISTS bronze_erp_px_cat_g1v2;
 
 -- create table 
 CREATE TABLE bronze_erp_px_cat_g1v2(
-ID					VARCHAR(50),
-CAT					VARCHAR(50),
-SUBCAT				VARCHAR(50),
-MAINTENANCE			VARCHAR(50)
+id					VARCHAR(50),
+cat					VARCHAR(50),
+subcat				VARCHAR(50),
+maintenance			VARCHAR(50)
 );
 
